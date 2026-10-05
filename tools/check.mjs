@@ -26,13 +26,23 @@ for (const id of readdirSync(join(root, "plugins"))) {
     listings.push(readListing(`plugins/${id}/${version}`));
 }
 const catalog = buildCatalog(listings);
-if (process.env.BASE_SHA && process.env.HEAD_SHA) {
-  const diff = execFileSync(
-    "git",
-    ["diff", "--name-status", process.env.BASE_SHA, process.env.HEAD_SHA],
-    { cwd: root, encoding: "utf8" },
-  );
-  for (const path of validateChanges(diff)) {
+const changesFileIndex = process.argv.indexOf("--changes-file");
+if (changesFileIndex !== -1 || (process.env.BASE_SHA && process.env.HEAD_SHA)) {
+  let paths;
+  if (changesFileIndex !== -1) {
+    const value = JSON.parse(readFileSync(process.argv[changesFileIndex + 1], "utf8"));
+    if (!Array.isArray(value) || value.some(path => typeof path !== "string"))
+      throw new Error("审核路径列表无效");
+    paths = validateChanges(value.map(path => `A\t${path}`).join("\n"));
+  } else {
+    const diff = execFileSync(
+      "git",
+      ["diff", "--name-status", process.env.BASE_SHA, process.env.HEAD_SHA],
+      { cwd: root, encoding: "utf8" },
+    );
+    paths = validateChanges(diff);
+  }
+  for (const path of paths) {
     const listing = readListing(path),
       [owner, repo] = listing.repository
         .slice("https://github.com/".length)

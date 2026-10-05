@@ -1,0 +1,86 @@
+
+> @vitalk/plugin-publisher@0.1.0 test
+> node --test *.test.mjs
+
+TAP version 13
+# Subtest: dry run validates bytes without fork, commit, push or PR
+ok 1 - dry run validates bytes without fork, commit, push or PR
+  ---
+  duration_ms: 306.845125
+  type: 'test'
+  ...
+# Subtest: publishing clones upstream, pushes only listing to fork and reports pending review
+ok 2 - publishing clones upstream, pushes only listing to fork and reports pending review
+  ---
+  duration_ms: 736.215875
+  type: 'test'
+  ...
+# Subtest: repeat finds existing PR using supported head filter and creates no new PR
+ok 3 - repeat finds existing PR using supported head filter and creates no new PR
+  ---
+  duration_ms: 665.038459
+  type: 'test'
+  ...
+# Subtest: failed push never reports publication success or attempts PR creation
+ok 4 - failed push never reports publication success or attempts PR creation
+  ---
+  duration_ms: 705.486041
+  type: 'test'
+  ...
+# Subtest: listing binds downloaded bytes to a fixed release and public manifest
+ok 5 - listing binds downloaded bytes to a fixed release and public manifest
+  ---
+  duration_ms: 0.777375
+  type: 'test'
+  ...
+# Subtest: SDK 0.4 daily brief capabilities are accepted without publishing page code
+ok 6 - SDK 0.4 daily brief capabilities are accepted without publishing page code
+  ---
+  duration_ms: 0.34475
+  type: 'test'
+  ...
+# Subtest: draft, prerelease and wrong tag cannot be submitted
+ok 7 - draft, prerelease and wrong tag cannot be submitted
+  ---
+  duration_ms: 0.17
+  type: 'test'
+  ...
+# Subtest: unknown format, permissions and oversized bytes are rejected
+ok 8 - unknown format, permissions and oversized bytes are rejected
+  ---
+  duration_ms: 0.106542
+  type: 'test'
+  ...
+# Subtest: asset must match the declared repository and cannot use latest
+ok 9 - asset must match the declared repository and cannot use latest
+  ---
+  duration_ms: 0.099625
+  type: 'test'
+  ...
+# Subtest: path and branch are derived from validated id/version and only carry metadata
+ok 10 - path and branch are derived from validated id/version and only carry metadata
+  ---
+  duration_ms: 0.394083
+  type: 'test'
+  ...
+# Subtest: SDK version, malformed id and invalid version are rejected
+ok 11 - SDK version, malformed id and invalid version are rejected
+  ---
+  duration_ms: 0.157584
+  type: 'test'
+  ...
+# Subtest: publisher rejects leading-zero versions accepted by the older SDK
+ok 12 - publisher rejects leading-zero versions accepted by the older SDK
+  ---
+  duration_ms: 0.114167
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2445.970291
