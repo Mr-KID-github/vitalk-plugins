@@ -41,6 +41,18 @@ test("listing binds downloaded bytes to a fixed release and public manifest", ()
   assert.match(x.artifact.sha256, /^[a-f0-9]{64}$/);
   assert.equal(x.repository, "https://github.com/example/daily");
 });
+test("SDK 0.4 daily brief capabilities are accepted without publishing page code", () => {
+  const permissions = ["history.read", "tasks.read", "tasks.write", "ai.generate", "storage"];
+  const input = Buffer.from(JSON.stringify({
+    ...pkg,
+    manifest: { ...pkg.manifest, permissions, page: { title: "今日简报", layout: "full" } },
+  }));
+  const listing = make(release, input);
+  assert.deepEqual(listing.permissions, permissions);
+  assert.equal(listing.artifact.size, input.length);
+  assert.equal("html" in listing, false);
+  assert.equal("page" in listing, false);
+});
 test("draft, prerelease and wrong tag cannot be submitted", () => {
   for (const change of [
     { isDraft: true },
