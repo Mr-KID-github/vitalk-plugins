@@ -1,0 +1,50 @@
+
+> @vitalk/plugin-publisher@0.1.0 test
+> node --test *.test.mjs
+
+TAP version 13
+# Subtest: listing binds downloaded bytes to a fixed release and public manifest
+ok 1 - listing binds downloaded bytes to a fixed release and public manifest
+  ---
+  duration_ms: 0.628417
+  type: 'test'
+  ...
+# Subtest: draft, prerelease and wrong tag cannot be submitted
+ok 2 - draft, prerelease and wrong tag cannot be submitted
+  ---
+  duration_ms: 0.179041
+  type: 'test'
+  ...
+# Subtest: unknown format, permissions and oversized bytes are rejected
+ok 3 - unknown format, permissions and oversized bytes are rejected
+  ---
+  duration_ms: 0.109291
+  type: 'test'
+  ...
+# Subtest: asset must match the declared repository and cannot use latest
+ok 4 - asset must match the declared repository and cannot use latest
+  ---
+  duration_ms: 0.065417
+  type: 'test'
+  ...
+# Subtest: path and branch are derived from validated id/version and only carry metadata
+ok 5 - path and branch are derived from validated id/version and only carry metadata
+  ---
+  duration_ms: 0.126375
+  type: 'test'
+  ...
+# Subtest: SDK version, malformed id and invalid version are rejected
+ok 6 - SDK version, malformed id and invalid version are rejected
+  ---
+  duration_ms: 0.120917
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 33.899083

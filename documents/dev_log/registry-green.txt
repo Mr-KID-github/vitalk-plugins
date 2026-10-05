@@ -1,0 +1,44 @@
+
+> test
+> node --test tools/*.test.mjs
+
+TAP version 13
+# Subtest: fixed release listing matches its registry path
+ok 1 - fixed release listing matches its registry path
+  ---
+  duration_ms: 0.588166
+  type: 'test'
+  ...
+# Subtest: path mismatch, latest URL, checksum and capabilities reject
+ok 2 - path mismatch, latest URL, checksum and capabilities reject
+  ---
+  duration_ms: 0.20075
+  type: 'test'
+  ...
+# Subtest: catalog keeps version history and orders semver numerically
+ok 3 - catalog keeps version history and orders semver numerically
+  ---
+  duration_ms: 5.104208
+  type: 'test'
+  ...
+# Subtest: same version duplicate or publisher takeover reject
+ok 4 - same version duplicate or publisher takeover reject
+  ---
+  duration_ms: 0.13675
+  type: 'test'
+  ...
+# Subtest: submission can add only immutable version JSON; cannot edit workflow or previous record
+ok 5 - submission can add only immutable version JSON; cannot edit workflow or previous record
+  ---
+  duration_ms: 0.18175
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 39.221583

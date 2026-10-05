@@ -1,0 +1,72 @@
+TAP version 13
+# Subtest: listing binds downloaded bytes to a fixed release and public manifest
+not ok 1 - listing binds downloaded bytes to a fixed release and public manifest
+  ---
+  duration_ms: 0.253458
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk/plugin-publisher/publish.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: 'not implemented'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    buildListing (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.mjs:1:38)
+    make (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.test.mjs:7:33)
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.test.mjs:8:91)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: draft, prerelease and wrong tag cannot be submitted
+ok 2 - draft, prerelease and wrong tag cannot be submitted
+  ---
+  duration_ms: 0.134083
+  type: 'test'
+  ...
+# Subtest: unknown format, permissions and oversized bytes are rejected
+ok 3 - unknown format, permissions and oversized bytes are rejected
+  ---
+  duration_ms: 0.07175
+  type: 'test'
+  ...
+# Subtest: asset must match the declared repository and cannot use latest
+ok 4 - asset must match the declared repository and cannot use latest
+  ---
+  duration_ms: 0.039834
+  type: 'test'
+  ...
+# Subtest: path and branch are derived from validated id/version and only carry metadata
+not ok 5 - path and branch are derived from validated id/version and only carry metadata
+  ---
+  duration_ms: 0.04125
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk/plugin-publisher/publish.test.mjs:12:1'
+  failureType: 'testCodeFailure'
+  error: 'not implemented'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    buildListing (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.mjs:1:38)
+    make (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.test.mjs:7:33)
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk/plugin-publisher/publish.test.mjs:12:115)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: SDK version, malformed id and invalid version are rejected
+ok 6 - SDK version, malformed id and invalid version are rejected
+  ---
+  duration_ms: 0.057583
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 4
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 31.821833
