@@ -1,11 +1,15 @@
 import { validatePluginPackage } from "@vitalk/plugin-sdk";
 const VERSION = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
+// Match ViTalk's trusted native feature catalog; page plugins cannot claim these IDs.
+const RESERVED_FEATURE_IDS = new Set(["vitalk.english", "vitalk.ai-conversation"]);
 const REPOSITORY =
   /^https:\/\/github\.com\/([A-Za-z0-9][A-Za-z0-9_.-]*)\/([A-Za-z0-9][A-Za-z0-9_.-]*)$/;
 export function validateListing(value, path) {
   if (!value || typeof value !== "object") throw new Error("清单必须是对象");
   const { id, version, repository, publisher, artifact, minHostVersion } =
     value;
+  if (RESERVED_FEATURE_IDS.has(id))
+    throw new Error("插件 ID 为宿主原生功能保留，不能提交公共页面插件");
   if (!VERSION.test(version) || !VERSION.test(minHostVersion))
     throw new Error("需要正式版本号");
   if (path !== `plugins/${id}/${version}.json`)

@@ -1,0 +1,5 @@
+
+> build
+> node tools/check.mjs . --build
+
+目录校验通过：0个固定版本

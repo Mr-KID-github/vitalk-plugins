@@ -1,6 +1,8 @@
 import { createHash } from "node:crypto";
 import { validatePluginPackage } from "@vitalk/plugin-sdk";
 const REPO = /^[A-Za-z0-9][A-Za-z0-9_.-]*\/[A-Za-z0-9][A-Za-z0-9_.-]*$/;
+// Match ViTalk's trusted native feature catalog, not the general SDK validator.
+const RESERVED_FEATURE_IDS = new Set(["vitalk.english", "vitalk.ai-conversation"]);
 export function buildListing({
   bytes,
   release,
@@ -17,6 +19,8 @@ export function buildListing({
   const { manifest: m } = validatePluginPackage(
     JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes)),
   );
+  if (RESERVED_FEATURE_IDS.has(m.id))
+    throw new Error("插件 ID 为宿主原生功能保留，不能提交公共页面插件");
   if (
     release.isDraft ||
     release.isPrerelease ||
@@ -49,6 +53,8 @@ export function buildListing({
   };
 }
 export function publicationPlan(listing, registry) {
+  if (RESERVED_FEATURE_IDS.has(listing.id))
+    throw new Error("插件 ID 为宿主原生功能保留，不能提交公共页面插件");
   if (
     !REPO.test(registry) ||
     !/^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$/.test(listing.id) ||
