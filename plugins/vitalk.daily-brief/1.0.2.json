@@ -1,0 +1,22 @@
+{
+  "id": "vitalk.daily-brief",
+  "name": "今日简报",
+  "description": "回顾当天表达、统计、待确认事项，并用你配置的模型继续复盘。",
+  "version": "1.0.2",
+  "sdkVersion": 1,
+  "permissions": [
+    "history.read",
+    "ai.generate",
+    "storage",
+    "tasks.read",
+    "tasks.write"
+  ],
+  "publisher": "orulink-ai",
+  "repository": "https://github.com/orulink-ai/vitalk-plugin-daily-brief",
+  "minHostVersion": "0.6.11",
+  "artifact": {
+    "url": "https://github.com/orulink-ai/vitalk-plugin-daily-brief/releases/download/v1.0.2/vitalk.daily-brief.vitalk-plugin.json",
+    "sha256": "a97fa3be00a26ff5b184b5653f4370416a0453d8e1eaa756d1ae1dfb6bd63ca3",
+    "size": 405002
+  }
+}
