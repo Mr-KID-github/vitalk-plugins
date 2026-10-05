@@ -15,10 +15,12 @@ node /你的目录/vitalk-plugins/publisher/cli.mjs \
   --repository 你的账号/你的插件仓库 \
   --tag v1.0.0 \
   --asset 你的插件.vitalk-plugin.json \
-  --min-host 0.6.10
+  --min-host 0.6.11
 ```
 
 可把命令写入独立插件项目的 `package.json` 的 `scripts.publish`，之后运行 `npm run publish`。当前提供仓库内工具，尚未发布到 npm。
+
+目录校验器与 publisher 使用 vendored SDK 0.4.0，支持 `tasks.read/tasks.write` 等新公开权限；协议版本仍为 `sdkVersion:1`。需要今日简报的历史元信息、共享事项订阅和全页布局时，最低宿主版本为 0.6.11。不要把 SDK npm 版本当作客户端兼容版本。
 
 6. PR 检查通过后，由管理员检查插件功能、权限必要性、源码及包内容。合并后生成 `catalog.json`，客户端接入这个目录后可搜索和下载安装。PR 创建成功仅表示待审核。
 7. 修复或升级发布新 Release 版本，再执行同一命令。相同字节的待审版本重复执行复用原 PR；同版本变化会拒绝覆盖，需要升版本。

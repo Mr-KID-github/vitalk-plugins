@@ -31,3 +31,9 @@
 追加与目录一致的正式版本号要求，拒绝带前导零版本。Red：10通过、1失败；修正后11通过。目录5项仍通过。证据：[版本Red](publisher-version-red.txt)、[发布工具Green](publisher-contract-green.txt)、[目录Green](registry-green.txt)。
 
 接下来的验收：真实独立插件Release、自动上架PR、管理员合并、客户端远程目录下载安装；今日简报必须保留原页面。
+
+## 2026-10-06 01:27｜Codex / market_architect｜SDK0.4 兼容维护
+
+公开 SDK 增加受授权的共享待办读写、历史变更通知、模型元数据和完整页面布局。同步可信目录验证器与发布工具 vendored SDK；保留历史版本记录不可变。
+
+TDD：旧 SDK 不接受 tasks.read/write，新测试 Red；更新后目录6项、发布工具12项通过，SDK13项通过。宿主新能力要求0.6.11，今日简报声明该最低版本，不向旧0.6.10客户端误报兼容。真实日报Release已存在，但目录尚未合并，客户端安装验收仍待完成。

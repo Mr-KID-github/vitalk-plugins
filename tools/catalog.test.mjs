@@ -22,6 +22,12 @@ test("fixed release listing matches its registry path", () =>
     validateListing(listing, "plugins/example.daily/1.0.0.json"),
     listing,
   ));
+test("reviewed daily brief can declare SDK 0.4 task permissions", () => {
+  const daily = { ...listing, permissions: ["history.read", "tasks.read", "tasks.write", "ai.generate", "storage"] };
+  assert.deepEqual(validateListing(daily, "plugins/example.daily/1.0.0.json"), daily);
+  assert.deepEqual(buildCatalog([daily]).plugins[0].permissions, daily.permissions);
+  assert.throws(() => validateListing({ ...daily, permissions: ["tasks.invoke"] }, "plugins/example.daily/1.0.0.json"));
+});
 test("path mismatch, latest URL, checksum and capabilities reject", () => {
   for (const x of [
     { ...listing, id: "../x" },
