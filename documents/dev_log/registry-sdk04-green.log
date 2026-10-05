@@ -1,0 +1,55 @@
+
+> test
+> node --test tools/*.test.mjs
+
+TAP version 13
+# Subtest: fixed release listing matches its registry path
+ok 1 - fixed release listing matches its registry path
+  ---
+  duration_ms: 0.573042
+  type: 'test'
+  ...
+# Subtest: reviewed daily brief can declare SDK 0.4 task permissions
+ok 2 - reviewed daily brief can declare SDK 0.4 task permissions
+  ---
+  duration_ms: 0.276333
+  type: 'test'
+  ...
+# Subtest: path mismatch, latest URL, checksum and capabilities reject
+ok 3 - path mismatch, latest URL, checksum and capabilities reject
+  ---
+  duration_ms: 0.085209
+  type: 'test'
+  ...
+# Subtest: catalog keeps version history and orders semver numerically
+ok 4 - catalog keeps version history and orders semver numerically
+  ---
+  duration_ms: 5.386125
+  type: 'test'
+  ...
+# Subtest: same version duplicate or publisher takeover reject
+ok 5 - same version duplicate or publisher takeover reject
+  ---
+  duration_ms: 0.2355
+  type: 'test'
+  ...
+# Subtest: submission can add only immutable version JSON; cannot edit workflow or previous record
+ok 6 - submission can add only immutable version JSON; cannot edit workflow or previous record
+  ---
+  duration_ms: 0.192459
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 41.021417
+
+> build
+> node tools/check.mjs . --build
+
+目录校验通过：0个固定版本
