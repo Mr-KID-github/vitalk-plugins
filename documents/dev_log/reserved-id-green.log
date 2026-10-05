@@ -1,0 +1,274 @@
+TAP version 13
+# Subtest: dry run validates bytes without fork, commit, push or PR
+ok 1 - dry run validates bytes without fork, commit, push or PR
+  ---
+  duration_ms: 530.685041
+  type: 'test'
+  ...
+# Subtest: publishing clones upstream, pushes only listing to fork and reports pending review
+ok 2 - publishing clones upstream, pushes only listing to fork and reports pending review
+  ---
+  duration_ms: 699.864083
+  type: 'test'
+  ...
+# Subtest: repeat finds existing PR using supported head filter and creates no new PR
+ok 3 - repeat finds existing PR using supported head filter and creates no new PR
+  ---
+  duration_ms: 709.300708
+  type: 'test'
+  ...
+# Subtest: failed push never reports publication success or attempts PR creation
+ok 4 - failed push never reports publication success or attempts PR creation
+  ---
+  duration_ms: 722.783667
+  type: 'test'
+  ...
+# Subtest: listing binds downloaded bytes to a fixed release and public manifest
+ok 5 - listing binds downloaded bytes to a fixed release and public manifest
+  ---
+  duration_ms: 0.823708
+  type: 'test'
+  ...
+# Subtest: SDK 0.4 daily brief capabilities are accepted without publishing page code
+ok 6 - SDK 0.4 daily brief capabilities are accepted without publishing page code
+  ---
+  duration_ms: 0.345542
+  type: 'test'
+  ...
+# Subtest: draft, prerelease and wrong tag cannot be submitted
+ok 7 - draft, prerelease and wrong tag cannot be submitted
+  ---
+  duration_ms: 0.127833
+  type: 'test'
+  ...
+# Subtest: unknown format, permissions and oversized bytes are rejected
+ok 8 - unknown format, permissions and oversized bytes are rejected
+  ---
+  duration_ms: 0.100875
+  type: 'test'
+  ...
+# Subtest: asset must match the declared repository and cannot use latest
+ok 9 - asset must match the declared repository and cannot use latest
+  ---
+  duration_ms: 0.113625
+  type: 'test'
+  ...
+# Subtest: path and branch are derived from validated id/version and only carry metadata
+ok 10 - path and branch are derived from validated id/version and only carry metadata
+  ---
+  duration_ms: 0.763417
+  type: 'test'
+  ...
+# Subtest: SDK version, malformed id and invalid version are rejected
+ok 11 - SDK version, malformed id and invalid version are rejected
+  ---
+  duration_ms: 0.343708
+  type: 'test'
+  ...
+# Subtest: publisher rejects leading-zero versions accepted by the older SDK
+ok 12 - publisher rejects leading-zero versions accepted by the older SDK
+  ---
+  duration_ms: 0.267416
+  type: 'test'
+  ...
+# Subtest: publisher rejects reserved native feature ID vitalk.english before planning a PR
+ok 13 - publisher rejects reserved native feature ID vitalk.english before planning a PR
+  ---
+  duration_ms: 0.737791
+  type: 'test'
+  ...
+# Subtest: publisher rejects reserved native feature ID vitalk.ai-conversation before planning a PR
+ok 14 - publisher rejects reserved native feature ID vitalk.ai-conversation before planning a PR
+  ---
+  duration_ms: 0.488208
+  type: 'test'
+  ...
+# Subtest: fixed release listing matches its registry path
+ok 15 - fixed release listing matches its registry path
+  ---
+  duration_ms: 1.024583
+  type: 'test'
+  ...
+# Subtest: reviewed daily brief can declare SDK 0.4 task permissions
+ok 16 - reviewed daily brief can declare SDK 0.4 task permissions
+  ---
+  duration_ms: 0.263292
+  type: 'test'
+  ...
+# Subtest: path mismatch, latest URL, checksum and capabilities reject
+ok 17 - path mismatch, latest URL, checksum and capabilities reject
+  ---
+  duration_ms: 0.126
+  type: 'test'
+  ...
+# Subtest: catalog keeps version history and orders semver numerically
+ok 18 - catalog keeps version history and orders semver numerically
+  ---
+  duration_ms: 5.569666
+  type: 'test'
+  ...
+# Subtest: same version duplicate or publisher takeover reject
+ok 19 - same version duplicate or publisher takeover reject
+  ---
+  duration_ms: 0.242583
+  type: 'test'
+  ...
+# Subtest: submission can add only immutable version JSON; cannot edit workflow or previous record
+ok 20 - submission can add only immutable version JSON; cannot edit workflow or previous record
+  ---
+  duration_ms: 0.214584
+  type: 'test'
+  ...
+# Subtest: reserved native feature ID vitalk.english cannot enter the public catalog
+ok 21 - reserved native feature ID vitalk.english cannot enter the public catalog
+  ---
+  duration_ms: 0.135291
+  type: 'test'
+  ...
+# Subtest: reserved native feature ID vitalk.ai-conversation cannot enter the public catalog
+ok 22 - reserved native feature ID vitalk.ai-conversation cannot enter the public catalog
+  ---
+  duration_ms: 0.045417
+  type: 'test'
+  ...
+# Subtest: fork data only: fixed SHA trees and blobs, no checkout or raw download
+ok 23 - fork data only: fixed SHA trees and blobs, no checkout or raw download
+  ---
+  duration_ms: 1.210167
+  type: 'test'
+  ...
+# Subtest: paginates all files at bounded ten-entry pages
+ok 24 - paginates all files at bounded ten-entry pages
+  ---
+  duration_ms: 1.888
+  type: 'test'
+  ...
+# Subtest: rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+ok 25 - rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+  ---
+  duration_ms: 0.51075
+  type: 'test'
+  ...
+# Subtest: rejects missing pagination data, raced head or event SHA mismatch
+ok 26 - rejects missing pagination data, raced head or event SHA mismatch
+  ---
+  duration_ms: 0.14975
+  type: 'test'
+  ...
+# Subtest: rejects symlink/submodule, size limit, incorrect declared length and blob hash
+ok 27 - rejects symlink/submodule, size limit, incorrect declared length and blob hash
+  ---
+  duration_ms: 0.371917
+  type: 'test'
+  ...
+# Subtest: workflow checks out exactly trusted base and uses API prepared data
+ok 28 - workflow checks out exactly trusted base and uses API prepared data
+  ---
+  duration_ms: 0.305375
+  type: 'test'
+  ...
+# Subtest: prepares only trusted base plugins and validated new JSON; never copies submitter code
+ok 29 - prepares only trusted base plugins and validated new JSON; never copies submitter code
+  ---
+  duration_ms: 5.303208
+  type: 'test'
+  ...
+# Subtest: prepare rejects schema mismatch before creating directory
+ok 30 - prepare rejects schema mismatch before creating directory
+  ---
+  duration_ms: 1.038375
+  type: 'test'
+  ...
+# Subtest: dry run validates bytes without fork, commit, push or PR
+ok 31 - dry run validates bytes without fork, commit, push or PR
+  ---
+  duration_ms: 640.643375
+  type: 'test'
+  ...
+# Subtest: publishing clones upstream, pushes only listing to fork and reports pending review
+ok 32 - publishing clones upstream, pushes only listing to fork and reports pending review
+  ---
+  duration_ms: 865.177834
+  type: 'test'
+  ...
+# Subtest: repeat finds existing PR using supported head filter and creates no new PR
+ok 33 - repeat finds existing PR using supported head filter and creates no new PR
+  ---
+  duration_ms: 590.4325
+  type: 'test'
+  ...
+# Subtest: failed push never reports publication success or attempts PR creation
+ok 34 - failed push never reports publication success or attempts PR creation
+  ---
+  duration_ms: 717.799792
+  type: 'test'
+  ...
+# Subtest: listing binds downloaded bytes to a fixed release and public manifest
+ok 35 - listing binds downloaded bytes to a fixed release and public manifest
+  ---
+  duration_ms: 1.524917
+  type: 'test'
+  ...
+# Subtest: SDK 0.4 daily brief capabilities are accepted without publishing page code
+ok 36 - SDK 0.4 daily brief capabilities are accepted without publishing page code
+  ---
+  duration_ms: 0.468167
+  type: 'test'
+  ...
+# Subtest: draft, prerelease and wrong tag cannot be submitted
+ok 37 - draft, prerelease and wrong tag cannot be submitted
+  ---
+  duration_ms: 0.160166
+  type: 'test'
+  ...
+# Subtest: unknown format, permissions and oversized bytes are rejected
+ok 38 - unknown format, permissions and oversized bytes are rejected
+  ---
+  duration_ms: 0.130334
+  type: 'test'
+  ...
+# Subtest: asset must match the declared repository and cannot use latest
+ok 39 - asset must match the declared repository and cannot use latest
+  ---
+  duration_ms: 0.134209
+  type: 'test'
+  ...
+# Subtest: path and branch are derived from validated id/version and only carry metadata
+ok 40 - path and branch are derived from validated id/version and only carry metadata
+  ---
+  duration_ms: 0.952583
+  type: 'test'
+  ...
+# Subtest: SDK version, malformed id and invalid version are rejected
+ok 41 - SDK version, malformed id and invalid version are rejected
+  ---
+  duration_ms: 0.441125
+  type: 'test'
+  ...
+# Subtest: publisher rejects leading-zero versions accepted by the older SDK
+ok 42 - publisher rejects leading-zero versions accepted by the older SDK
+  ---
+  duration_ms: 0.184709
+  type: 'test'
+  ...
+# Subtest: publisher rejects reserved native feature ID vitalk.english before planning a PR
+ok 43 - publisher rejects reserved native feature ID vitalk.english before planning a PR
+  ---
+  duration_ms: 0.52375
+  type: 'test'
+  ...
+# Subtest: publisher rejects reserved native feature ID vitalk.ai-conversation before planning a PR
+ok 44 - publisher rejects reserved native feature ID vitalk.ai-conversation before planning a PR
+  ---
+  duration_ms: 0.335291
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2848.969

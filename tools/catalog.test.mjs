@@ -102,3 +102,14 @@ test("submission can add only immutable version JSON; cannot edit workflow or pr
   ])
     assert.throws(() => validateChanges(diff));
 });
+
+for (const id of ["vitalk.english", "vitalk.ai-conversation"]) {
+  test(`reserved native feature ID ${id} cannot enter the public catalog`, () => {
+    const reserved = { ...listing, id };
+    assert.throws(
+      () => validateListing(reserved, `plugins/${id}/1.0.0.json`),
+      /保留/,
+    );
+    assert.throws(() => buildCatalog([listing, reserved]), /保留/);
+  });
+}

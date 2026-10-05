@@ -123,3 +123,13 @@ test("publisher rejects leading-zero versions accepted by the older SDK", () => 
   };
   assert.throws(() => make(changed, invalid));
 });
+
+for (const id of ["vitalk.english", "vitalk.ai-conversation"]) {
+  test(`publisher rejects reserved native feature ID ${id} before planning a PR`, () => {
+    const reserved = Buffer.from(JSON.stringify({
+      ...pkg, manifest: { ...pkg.manifest, id },
+    }));
+    assert.throws(() => make(release, reserved), /保留/);
+    assert.throws(() => publicationPlan({ ...make(), id }, "orulink-ai/vitalk-plugins"), /保留/);
+  });
+}

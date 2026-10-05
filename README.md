@@ -52,6 +52,12 @@ npm run build
 npm --prefix publisher test
 ```
 
-当前目录初始化为空。今日简报尚未以保留原界面的真实插件完成迁移；不得以示例包冒充原产品验收。
+## 当前上架状态与验收边界
+
+截至 2026-10-06（Asia/Shanghai），[今日简报独立项目](https://github.com/orulink-ai/vitalk-plugin-daily-brief)已发布正式 `v1.0.0` 与 `v1.0.1` Release。`1.0.0` 的[上架 PR #2](https://github.com/orulink-ai/vitalk-plugins/pull/2)已审核合并，公共目录已有真实插件，不能再视为空目录。
+
+`1.0.1` 的[更新 PR #4](https://github.com/orulink-ai/vitalk-plugins/pull/4)已通过检查、合并并部署，旧 `1.0.0` 固定清单与资产保留。后续待审版本不会影响已上架版本。开发者创建 Release 或 PR 不等于新版本已在 Store 上架，必须确认合并及目录部署结果。
+
+今日简报保留原页面与业务算法，使用公开 SDK 构建独立安装包。真实原生客户端已下载并打开插件 iframe，安装、启停、更新和卸载的完整最终回执仍待补齐；真实云模型凭据与结果质量未验证。合成模型桥接与独立交互测试可以验证重新生成及连续复盘流程，不能冒充真实云模型成功。原生未配置模型时按错误边界验收，真实模型服务验证单独记录。
 
 参考 [Raycast 发布流程](https://developers.raycast.com/basics/publish-an-extension)：借鉴一条命令创建 PR 的体验；ViTalk 仍采用独立插件仓库，公共仓库只保存目录。

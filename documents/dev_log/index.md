@@ -3,7 +3,7 @@
 - 任务标识：task-357552ee-7163-440b-b48a-6045e5a22c95
 - 建档时间：2026-10-06T00:15:13.636358+08:00
 - 参与者：zhouyann00 / Codex
-- 当前阶段：待远程验证
+- 当前阶段：真实 1.0.0 已上架；1.0.1 待审核合入，客户端最终原生回执待补齐
 - 关联：ViTalk Issue #43 https://github.com/orulink-ai/ViTalk/issues/43
 - 主任务档案：ViTalk 的 documents/dev_log/2026-10-05/2026-10-05_234418_zhouyann00_未关联Issue_插件市场发布流程与今日简报走查/index.md
 - 授权：用户指定公共仓库 orulink-ai/vitalk-plugins，采用 GitHub PR 审核而非自建后台。
@@ -57,3 +57,25 @@ TDD：[Red](review-api-red.log) 是初始安全读取尚未实现及旧双checko
 安全边界：此检查证明清单结构、不可变登记与当前Release字节一致，不能证明HTML业务安全、发布者授权身份或未来Release资产不被替换；管理员仍需审查身份、权限和源码，宿主安装必须校验登记SHA256。审核通过后新push会改变head，需新run；不能把旧head的成功当成新head通过。本地 git diff 模式保留兼容，但目标workflow不调用它、不获取fork代码。API读取不执行提交者内容，只有合入后的可信目录才能发布。
 
 最终SDK文档包刷新：主任务重新生成0.4的README.html后，以新绝对临时目录打包，包内README.md/html与源码逐字节一致，三个vendor（registry、registry/publisher、ViTalk/plugin-publisher）字节相同。SHA256 `ea12e7f3ecea08b7bb1a85a42f37d2ddab9e28c6ce71427d4f458aa82702504b`，刷新三个lockfile实际sha512 integrity；各自使用独立新cache `npm ci --ignore-scripts`，安装后HTML与源一致。目录14、两份publisher各12项通过，空目录build通过。SDK业务版本仍0.4.0且业务代码未变；已发布日报1.0.0不得覆盖，后续使用1.0.1新Release验收。本地临时包位置 `/tmp/vitalk-sdk04-final.QvimBV/vitalk-plugin-sdk-0.4.0.tgz`，可追溯制品以提交的vendor为准。
+
+
+## 2026-10-06T02:00:50.737255+08:00｜market_product / Codex｜entry-product-publication-facts
+
+独立产品评审核对本机 gh：今日简报 Release v1.0.0/v1.0.1 已存在；[目录 PR #2](https://github.com/orulink-ai/vitalk-plugins/pull/2)为 MERGED，merge commit `2e9c73a5c61edf55e6464fcf5eb4bb4b6e9f212d`；[更新 PR #4](https://github.com/orulink-ai/vitalk-plugins/pull/4)为 OPEN，validate SUCCESS。更新 README 原有「目录为空、今日简报未迁移」的过期当前状态，保留历史开发正文。
+
+只修改本仓库 README 与档案状态；无代码改动，TDD不适用，以实际GitHub状态查询、Release清单及README链接核对替代。未提交，后续由主代理选择性文档 PR 处理。
+
+验收边界：主代理仍在同进程原生验证安装、启停、数据保留更新与卸载，尚不能把已下载打开 iframe 当成完整链路通过。合成桥接已验证重新生成、连续复盘，真实未配置模型的原生运行只证明可理解的错误边界。真实云模型凭据/质量不是本轮 GitHub 发布闭环的门槛，但必须明确未验证，不作已成功承诺。
+
+
+## 2026-10-06T02:02:55.065374+08:00｜market_product / Codex｜entry-reserved-feature-id-parity
+
+架构复现发现公共目录接受 `vitalk.english`，而宿主 `validateRemoteCatalog` 通过 `isReservedFeatureId` 拒绝包含该ID的整个目录。核对宿主 `public/plugins/catalog.json`，当前保留ID为 `vitalk.english` 与 `vitalk.ai-conversation`。
+
+TDD：分别新增目录 validateListing/buildCatalog 与 publisher buildListing/publicationPlan 拒绝两个ID的检查。[Red](reserved-id-red.log)：18项中4失败14通过，失败为新保留身份约束缺失。实现最小ID拒绝后，[Green](reserved-id-green.log)：目录/审核工具、公共publisher和主仓publisher共44项通过。主仓 `plugin-publisher/publish.mjs` 与测试已同步；未修改SDK通用包validator，它仍须允许受信功能包清单。
+
+[本地目录构建](reserved-id-build.log)通过：本维护分支的本地 plugins 为空，0个版本；该输出不是远程市场为空的证据，远程1.0.0已上线事实保留。此修复未提交/未推送，可信维护PR及远程验证由主代理继续。无其他业务或Feishu改动。
+
+## 2026-10-06 02:12 Asia/Shanghai｜Codex｜真实更新清单合入
+
+PR #4 已检查成功并merge，合入5c42faa8b9f9d1dd32488b07e22bbe1a845f70ac两个parent已核对，Pages实际GET含1.0.1/1.0.0。下一步通过隔离原生1.0.1→1.0.2更新走查；此前1.0.0安装已验证，300秒测试进程自动结束，不能称其已完成更新。
