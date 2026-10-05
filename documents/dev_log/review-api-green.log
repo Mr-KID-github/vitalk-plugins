@@ -1,0 +1,98 @@
+
+> test
+> node --test tools/*.test.mjs
+
+TAP version 13
+# Subtest: fixed release listing matches its registry path
+ok 1 - fixed release listing matches its registry path
+  ---
+  duration_ms: 1.604084
+  type: 'test'
+  ...
+# Subtest: reviewed daily brief can declare SDK 0.4 task permissions
+ok 2 - reviewed daily brief can declare SDK 0.4 task permissions
+  ---
+  duration_ms: 0.62275
+  type: 'test'
+  ...
+# Subtest: path mismatch, latest URL, checksum and capabilities reject
+ok 3 - path mismatch, latest URL, checksum and capabilities reject
+  ---
+  duration_ms: 0.202209
+  type: 'test'
+  ...
+# Subtest: catalog keeps version history and orders semver numerically
+ok 4 - catalog keeps version history and orders semver numerically
+  ---
+  duration_ms: 11.044625
+  type: 'test'
+  ...
+# Subtest: same version duplicate or publisher takeover reject
+ok 5 - same version duplicate or publisher takeover reject
+  ---
+  duration_ms: 0.7855
+  type: 'test'
+  ...
+# Subtest: submission can add only immutable version JSON; cannot edit workflow or previous record
+ok 6 - submission can add only immutable version JSON; cannot edit workflow or previous record
+  ---
+  duration_ms: 0.532083
+  type: 'test'
+  ...
+# Subtest: fork data only: fixed SHA trees and blobs, no checkout or raw download
+ok 7 - fork data only: fixed SHA trees and blobs, no checkout or raw download
+  ---
+  duration_ms: 1.313625
+  type: 'test'
+  ...
+# Subtest: paginates all files at bounded ten-entry pages
+ok 8 - paginates all files at bounded ten-entry pages
+  ---
+  duration_ms: 2.586084
+  type: 'test'
+  ...
+# Subtest: rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+ok 9 - rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+  ---
+  duration_ms: 1.197792
+  type: 'test'
+  ...
+# Subtest: rejects missing pagination data, raced head or event SHA mismatch
+ok 10 - rejects missing pagination data, raced head or event SHA mismatch
+  ---
+  duration_ms: 0.432
+  type: 'test'
+  ...
+# Subtest: rejects symlink/submodule, size limit, incorrect declared length and blob hash
+ok 11 - rejects symlink/submodule, size limit, incorrect declared length and blob hash
+  ---
+  duration_ms: 0.691833
+  type: 'test'
+  ...
+# Subtest: workflow checks out exactly trusted base and uses API prepared data
+ok 12 - workflow checks out exactly trusted base and uses API prepared data
+  ---
+  duration_ms: 0.189708
+  type: 'test'
+  ...
+# Subtest: prepares only trusted base plugins and validated new JSON; never copies submitter code
+ok 13 - prepares only trusted base plugins and validated new JSON; never copies submitter code
+  ---
+  duration_ms: 6.970667
+  type: 'test'
+  ...
+# Subtest: prepare rejects schema mismatch before creating directory
+ok 14 - prepare rejects schema mismatch before creating directory
+  ---
+  duration_ms: 1.186375
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 78.338125

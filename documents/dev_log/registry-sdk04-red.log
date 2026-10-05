@@ -1,0 +1,65 @@
+
+> test
+> node --test tools/*.test.mjs
+
+TAP version 13
+# Subtest: fixed release listing matches its registry path
+ok 1 - fixed release listing matches its registry path
+  ---
+  duration_ms: 0.587084
+  type: 'test'
+  ...
+# Subtest: reviewed daily brief can declare SDK 0.4 task permissions
+not ok 2 - reviewed daily brief can declare SDK 0.4 task permissions
+  ---
+  duration_ms: 0.174917
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk-plugin-registry/tools/catalog.test.mjs:25:1'
+  failureType: 'testCodeFailure'
+  error: '插件清单、版本、权限或 HTML 无效'
+  code: 'invalid_package'
+  name: 'PluginError'
+  stack: |-
+    validatePluginPackage (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/node_modules/@vitalk/plugin-sdk/dist/index.js:53:15)
+    validateListing (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/catalog.mjs:15:3)
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/catalog.test.mjs:27:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: path mismatch, latest URL, checksum and capabilities reject
+ok 3 - path mismatch, latest URL, checksum and capabilities reject
+  ---
+  duration_ms: 0.137666
+  type: 'test'
+  ...
+# Subtest: catalog keeps version history and orders semver numerically
+ok 4 - catalog keeps version history and orders semver numerically
+  ---
+  duration_ms: 5.349042
+  type: 'test'
+  ...
+# Subtest: same version duplicate or publisher takeover reject
+ok 5 - same version duplicate or publisher takeover reject
+  ---
+  duration_ms: 0.179875
+  type: 'test'
+  ...
+# Subtest: submission can add only immutable version JSON; cannot edit workflow or previous record
+ok 6 - submission can add only immutable version JSON; cannot edit workflow or previous record
+  ---
+  duration_ms: 0.184583
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 41.69625

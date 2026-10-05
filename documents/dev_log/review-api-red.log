@@ -1,0 +1,90 @@
+TAP version 13
+# Subtest: fork data only: fixed SHA trees and blobs, no checkout or raw download
+not ok 1 - fork data only: fixed SHA trees and blobs, no checkout or raw download
+  ---
+  duration_ms: 0.451792
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk-plugin-registry/tools/review.test.mjs:33:1'
+  failureType: 'testCodeFailure'
+  error: '尚未实现安全数据读取'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    collectSubmission (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/review.mjs:1:51)
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/review.test.mjs:35:24)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: paginates all files at bounded ten-entry pages
+not ok 2 - paginates all files at bounded ten-entry pages
+  ---
+  duration_ms: 0.151583
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk-plugin-registry/tools/review.test.mjs:40:1'
+  failureType: 'testCodeFailure'
+  error: '尚未实现安全数据读取'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    collectSubmission (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/review.mjs:1:51)
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/review.test.mjs:43:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+ok 3 - rejects modified/deleted/renamed, unsafe paths, duplicate, empty and >20 changes before blobs
+  ---
+  duration_ms: 0.442625
+  type: 'test'
+  ...
+# Subtest: rejects missing pagination data, raced head or event SHA mismatch
+ok 4 - rejects missing pagination data, raced head or event SHA mismatch
+  ---
+  duration_ms: 0.19125
+  type: 'test'
+  ...
+# Subtest: rejects symlink/submodule, size limit, incorrect declared length and blob hash
+ok 5 - rejects symlink/submodule, size limit, incorrect declared length and blob hash
+  ---
+  duration_ms: 0.125
+  type: 'test'
+  ...
+# Subtest: workflow checks out exactly trusted base and uses API prepared data
+not ok 6 - workflow checks out exactly trusted base and uses API prepared data
+  ---
+  duration_ms: 1.056875
+  type: 'test'
+  location: '/Users/zhouyann/Desktop/zouyu的项目/ViTalk-plugin-registry/tools/review.test.mjs:61:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/zhouyann/Desktop/zouyu%E7%9A%84%E9%A1%B9%E7%9B%AE/ViTalk-plugin-registry/tools/review.test.mjs:63:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 3
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 38.389625

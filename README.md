@@ -37,7 +37,9 @@ node /你的目录/vitalk-plugins/publisher/cli.mjs \
 
 ## 自动检查的执行边界
 
-`pull_request_target` 使用目标分支中已经审核的 workflow、验证器和 SDK；PR 内容只作为数据检出。不会安装 PR 的依赖，不执行 PR 的测试、脚本或插件 HTML。token 只有 contents:read，checkout 不保留凭据。不允许在此 workflow 中添加执行 submission 代码的步骤。
+`pull_request_target` 使用目标分支中已经审核的 workflow、验证器和 SDK；不检出 fork/head；只通过 GitHub REST API 读取新增版本 JSON 数据。不会安装 PR 的依赖，不执行 PR 的测试、脚本或插件 HTML。token 只有 contents:read 与 pull-requests:read，checkout 不保留凭据。不允许在此 workflow 中添加执行 submission 代码的步骤。
+
+可信工具固定 PR head SHA，验证完整分页、最多20个新增清单、普通文件模式、Git blob摘要及16KB大小限制，并在读取结束复核PR未变化。它仅复制可信base的plugins到全新临时目录，追加已验证JSON后检查正式Release的实际字节，禁止覆盖历史版本。API只读，拒绝重定向并限制响应大小；安装端仍须复核登记SHA256，自动检查不证明发布者身份或插件业务安全。
 
 只允许新增版本清单的 PR 走此检查；维护 workflow/验证器的 PR 需要管理员单独审阅，其上架检查会按设计拒绝。主分支 push 生成静态目录并部署 GitHub Pages。
 
